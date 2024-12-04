@@ -1,9 +1,7 @@
 "use client";
 
-import { useSubmitCustomerFormMutation } from "@/redux/api/customerApi";
 import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-
 
 // Define TypeScript interface for form fields
 interface FormFields {
@@ -46,20 +44,15 @@ interface FormFields {
   billingAddress?: string;
   shippingAddress?: string;
 }
+
 const AddCustomer: React.FC = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormFields>();
-  const [submitCustomerForm, { }] = useSubmitCustomerFormMutation(); // Destructure isLoading and error
-
-  const onSubmit: SubmitHandler<FormFields> = (data) => {
-    submitCustomerForm(data)
-      .then(() => {
-        reset(); // Reset the form after successful submission
-        console.log("Form Data:", data);
-      })
-      .catch((err) => {
-        console.error("Submission Error:", err);
-      });
+  
+  const onSubmit: SubmitHandler<FormFields> = (data: FormFields) => {
+    console.log("Form Data:", data);
+    reset(); // Reset the form after logging
   };
+
 
   return (
     <div className="w-full p-6 bg-white shadow-md rounded-lg">
