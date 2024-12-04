@@ -88,7 +88,7 @@ const AddCustomer: React.FC = () => {
             {...register("customerType")}
             className={`bg-gray-50 border ${errors.customerType ? "border-red-500" : "border-gray-300"} rounded-lg text-sm w-full p-2.5`}
           >
-            <option value="">Select Customer Type..</option>
+            <option value="">Select Customer Type...</option>
             <option value="Individual">Individual</option>
             <option value="Business">Business</option>
           </select>
@@ -109,7 +109,7 @@ const AddCustomer: React.FC = () => {
             {...register("sellType")}
             className={`bg-gray-50 border ${errors.sellType ? "border-red-500" : "border-gray-300"} rounded-lg text-sm w-full p-2.5`}
           >
-            <option value="">Select Sell Type..</option>
+            <option value="">Select Sell Type...</option>
             <option value="Retailer">Retailer</option>
             <option value="Wholesaler">Wholesaler</option>
             <option value="Dealer">Dealer</option>
